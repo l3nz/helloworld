@@ -212,7 +212,7 @@ class Helloworld implements \BMO {
 				id INT(11) AUTO_INCREMENT PRIMARY KEY,
 				subject VARCHAR(60),
 				body TEXT;";
-			return $this->db->execute($sql);
+			return $this->db->query($sql);
 		} catch(PDOException $e) {
 			return $e->getMessage();
 		}
@@ -223,7 +223,7 @@ class Helloworld implements \BMO {
 
 		try{
 			$sql = "DROP $table;";
-			return $this->db->execute($sql);
+			return $this->db->query($sql);
 		} catch(PDOException $e) {
 			return $e->getMessage();
 		}
